@@ -9,7 +9,7 @@
   <title>安装Tomcat和建立第一个Java Web程序 | Whales fall&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、Tomcat简介 Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。由于有了Sun 的参与和支持，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，Tomcat 5支持最新的Servlet 2.4 和JSP 2.0 规范。因为Tomc">
-<meta name="keywords" content="Literature and art">
+<meta name="keywords" content="Tomcat,Eclipse">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安装Tomcat和建立第一个Java Web程序">
 <meta property="og:url" content="http://yoursite.com/2018/07/16/a/index.html">
@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2018/07/16/PQ4r0e.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/07/16/PQ4f6f.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/07/16/PQ45nS.md.png">
-<meta property="og:updated_time" content="2018-07-16T12:32:49.809Z">
+<meta property="og:updated_time" content="2018-07-17T06:05:43.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安装Tomcat和建立第一个Java Web程序">
 <meta name="twitter:description" content="一、Tomcat简介 Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。由于有了Sun 的参与和支持，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，Tomcat 5支持最新的Servlet 2.4 和JSP 2.0 规范。因为Tomc">
@@ -191,9 +191,20 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="一、Tomcat简介"><a href="#一、Tomcat简介" class="headerlink" title="一、Tomcat简介"></a>一、Tomcat简介</h3><p> Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。由于有了Sun 的参与和支持，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，Tomcat 5支持最新的Servlet 2.4 和JSP 2.0 规范。因为Tomcat 技术先进、性能稳定，而且免费，因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web 应用服务器。</p>
-<h3 id="二、安装Tomcat"><a href="#二、安装Tomcat" class="headerlink" title="二、安装Tomcat"></a>二、安装Tomcat</h3><p>这里安装的<a href="https://pan.baidu.com/s/1guHszTKl_fTYpWjGAhrX9w" target="_blank" rel="noopener">Tomcat</a>的版本为Tomcat 7.0，可以自行去Tomcat官网下载，也可以点击文本中的超链接进行下载（百度网盘）。将下载好的Tomcat压缩文件直接解压到制定的目录便可完成Tomcat的安装。<img src="https://s1.ax1x.com/2018/07/16/PQfIv8.md.png" alt="Tomcat目录"><br>对子目录进行简介：<br>（1）bin: 用于存放Tomcat的可执行文件和脚本文件（扩展名为bat的文件），如tomcat7.exe、startup.bat（启动Tomcat的脚本文件）。<br>（2）conf: 用于存放Tomcat的各种配置文件，如web.xml、server.xml。<br>（3）lib: 用于存放Tomcat服务器和所有Web应用程序需要访问的JAR文件。<br>（4）logs: 用于存放Tomcat的日志文件<br>（5）temp: 用于存放Tomcat运行时产生的临时文件。<br>（6）webapps: Web应用程序的主要发布目录，通常将要发布的应用程序放在这个目录下。<br>（7）work: Tomcat的工作目录，JSP编译生成的Servlet源文件和字节码文件放在这个目录下。<br>双击startup.bat文件（后缀为.bat），便会启动Tomcat服务器，此时，可以在命令行看到一些启动信息。<img src="https://s1.ax1x.com/2018/07/16/PQh9rF.md.png" alt="启动程序"></p>
+<h3 id="二、安装Tomcat"><a href="#二、安装Tomcat" class="headerlink" title="二、安装Tomcat"></a>二、安装Tomcat</h3><p>这里安装的<a href="https://pan.baidu.com/s/1guHszTKl_fTYpWjGAhrX9w" target="_blank" rel="noopener">Tomcat</a>的版本为Tomcat 7.0，可以自行去Tomcat官网下载，也可以点击文本中的超链接进行下载（百度网盘）。将下载好的Tomcat压缩文件直接解压到制定的目录便可完成Tomcat的安装。<img src="https://s1.ax1x.com/2018/07/16/PQfIv8.md.png" alt="Tomcat目录"></p>
+<p>对子目录进行简介：</p>
+<p>（1）bin: 用于存放Tomcat的可执行文件和脚本文件（扩展名为bat的文件），如tomcat7.exe、startup.bat（启动Tomcat的脚本文件）。</p>
+<p>（2）conf: 用于存放Tomcat的各种配置文件，如web.xml、server.xml。</p>
+<p>（3）lib: 用于存放Tomcat服务器和所有Web应用程序需要访问的JAR文件。</p>
+<p>（4）logs: 用于存放Tomcat的日志文件</p>
+<p>（5）temp: 用于存放Tomcat运行时产生的临时文件。</p>
+<p>（6）webapps: Web应用程序的主要发布目录，通常将要发布的应用程序放在这个目录下。</p>
+<p>（7）work: Tomcat的工作目录，JSP编译生成的Servlet源文件和字节码文件放在这个目录下。</p>
+<p>双击startup.bat文件（后缀为.bat），便会启动Tomcat服务器，此时，可以在命令行看到一些启动信息。<img src="https://s1.ax1x.com/2018/07/16/PQh9rF.md.png" alt="启动程序"></p>
 <h3 id="三、Tomcat诊断"><a href="#三、Tomcat诊断" class="headerlink" title="三、Tomcat诊断"></a>三、Tomcat诊断</h3><p>安装启动Tomcat时，可能会遇到双击bin目录下startup.bat脚本文件是，命令行窗口一闪而过。可以先启动一个命令行窗口，在这个命令行窗口中执行startup.bat命令，就会卡你到错误信息显示izai该窗口。然后再根据具体问题，具体分析。</p>
-<h3 id="四、编写第一个Java-Web程序"><a href="#四、编写第一个Java-Web程序" class="headerlink" title="四、编写第一个Java Web程序"></a>四、编写第一个Java Web程序</h3><p>打开<a href="https://pan.baidu.com/s/1X8nN7YlJZ3yzqszRCzArpA" target="_blank" rel="noopener">Eclipse</a>，单击工具栏中的【Window】-&gt;【Perferences】选项，会弹出一个【Perferences】窗体，在该窗口中单机坐车菜单中的【Server】选项，值啊展开的菜单中选择最后一项【Runtime Environments】，这是窗口右侧会出现【Server Runtime Environment】选项卡，如图（我已经安装完毕，所以有东西，初始时没有）<img src="https://s1.ax1x.com/2018/07/16/PQh7z6.md.png" alt="选项卡">，点击【Add】，选择自己的服务器和版本号，我的是apache-tomcat-7.0.67，所以选择的是【Apache Tomcat v7.0】<img src="https://s1.ax1x.com/2018/07/16/PQhXee.png" alt="">，之后点【Next】，在弹出的窗口单击【Browser】按钮，选择安装Tomcat服务器的目录，最后点击【Finish】-&gt;【OK】按钮，完成Eclipse和Tomcat服务器的关联。<img src="https://s1.ax1x.com/2018/07/16/PQ4MlV.png" alt=""><br>单击Eclipse下侧窗口的【Servers】选项卡标签，在该选项卡中可以看到一个“No server avaliable.Define a new server from the new server wizard…”的链接，单击链接，会弹出一个【New Server】窗口。选中最上面的文件夹中的【Tomcat v7.0 Server at localhost】选项。就此完成配置。<br>在Eclipse左侧右键新建【Project】，选中【Web】文件夹下【Dynamic Web Project】<img src="https://s1.ax1x.com/2018/07/16/PQ4GTJ.md.png" alt="创建项目">，起好名字后点【Next】，直到最后一页，选中唯一一个可选的项，再点【Finish】即可完成。<img src="https://s1.ax1x.com/2018/07/16/PQ4r0e.png" alt="finish">在建立的项目中右键即可创建.jsp文件，生成的.jsp文件会在【WebContent】文件下下面，一般情况下会出现错误，这个错误是构建路径问题。点击项目右键选择【java build path】点击进入，然后在右边的窗口上选择如图。<img src="https://s1.ax1x.com/2018/07/16/PQ4f6f.png" alt="导库">，点击【外部库】，选择Tomcat中lib下的servlet.api即可。如图<img src="https://s1.ax1x.com/2018/07/16/PQ45nS.md.png" alt="servler.api">，下面就实现你想要的目标吧！（jsp类似于html）</p>
+<h3 id="四、编写第一个Java-Web程序"><a href="#四、编写第一个Java-Web程序" class="headerlink" title="四、编写第一个Java Web程序"></a>四、编写第一个Java Web程序</h3><p>打开<a href="https://pan.baidu.com/s/1X8nN7YlJZ3yzqszRCzArpA" target="_blank" rel="noopener">Eclipse</a>，单击工具栏中的【Window】-&gt;【Perferences】选项，会弹出一个【Perferences】窗体，在该窗口中单机坐车菜单中的【Server】选项，值啊展开的菜单中选择最后一项【Runtime Environments】，这是窗口右侧会出现【Server Runtime Environment】选项卡，如图（我已经安装完毕，所以有东西，初始时没有）<img src="https://s1.ax1x.com/2018/07/16/PQh7z6.md.png" alt="选项卡">，点击【Add】，选择自己的服务器和版本号，我的是apache-tomcat-7.0.67，所以选择的是【Apache Tomcat v7.0】<img src="https://s1.ax1x.com/2018/07/16/PQhXee.png" alt="">，之后点【Next】，在弹出的窗口单击【Browser】按钮，选择安装Tomcat服务器的目录，最后点击【Finish】-&gt;【OK】按钮，完成Eclipse和Tomcat服务器的关联。<img src="https://s1.ax1x.com/2018/07/16/PQ4MlV.png" alt=""></p>
+<p>单击Eclipse下侧窗口的【Servers】选项卡标签，在该选项卡中可以看到一个“No server avaliable.Define a new server from the new server wizard…”的链接，单击链接，会弹出一个【New Server】窗口。选中最上面的文件夹中的【Tomcat v7.0 Server at localhost】选项。就此完成配置。</p>
+<p>在Eclipse左侧右键新建【Project】，选中【Web】文件夹下【Dynamic Web Project】<img src="https://s1.ax1x.com/2018/07/16/PQ4GTJ.md.png" alt="创建项目">，起好名字后点【Next】，直到最后一页，选中唯一一个可选的项，再点【Finish】即可完成。<img src="https://s1.ax1x.com/2018/07/16/PQ4r0e.png" alt="finish">在建立的项目中右键即可创建.jsp文件，生成的.jsp文件会在【WebContent】文件下下面，一般情况下会出现错误，这个错误是构建路径问题。点击项目右键选择【java build path】点击进入，然后在右边的窗口上选择如图。<img src="https://s1.ax1x.com/2018/07/16/PQ4f6f.png" alt="导库">，点击【外部库】，选择Tomcat中lib下的servlet.api即可。如图<img src="https://s1.ax1x.com/2018/07/16/PQ45nS.md.png" alt="servler.api">，下面就实现你想要的目标吧！（jsp类似于html）</p>
 
       
 
@@ -233,7 +244,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Eclipse</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Eclipse//" class="article-tag-list-link color3">Eclipse</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -328,6 +365,35 @@
   
   
 
+  
+  <div id="SOHUCS" sid="a" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<!--PC��WAP����Ӧ��-->
+<div id="SOHUCS" sid="安装Tomcat和建立第一个Java Web程序" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cytIDPPDo'; 
+var conf = 'prod_226f55cc770fbd706fc5cd38dff4d86e'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } 
+else { 
+var loadJs=function(d,a){
+var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+var b=document.createElement("script");
+b.setAttribute("type","text/javascript");
+b.setAttribute("charset","UTF-8");
+b.setAttribute("src",d);
+if(typeof a==="function"){
+if(window.attachEvent){
+b.onreadystatechange=function(){
+var e=b.readyState;
+if(e==="loaded"||e==="complete"){
+b.onreadystatechange=null;a()}}}
+else{b.onload=a}}c.appendChild(b)};
+loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); 
+</script>
+</script>
   
 
   
@@ -444,6 +510,18 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
