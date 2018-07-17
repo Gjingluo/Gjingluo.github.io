@@ -161,6 +161,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java Web学习之Servlet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/17/Java Web学习之Servlet/">Java Web学习之Servlet</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/17/Java Web学习之Servlet/" class="archive-article-date">
+  	<time datetime="2018-07-17T09:35:12.784Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、ServletConfig"><a href="#一、ServletConfig" class="headerlink" title="一、ServletConfig"></a>一、ServletConfig</h2><p>在Servlet的配置文件中，可以使用一个或多个<init-param>标签为servlet配置一些初始化参数。（配置在某个servlet标签或者整个web-app下）<br>当servlet配置了初始化参数后，web容器在创建servlet实例对象时，会自动将这些初始化参数封装到ServletConfig对象中，并在调用servlet的init方法时，将ServletConfig对象传递给servlet。进而，程序员通过ServletConfig对象就可以得到当前servlet的初始化参数信息。<br>好处：将数据库信息、编码方式等配置信息放在web.xml中，修改数据库的用户名和密码时，则直接很方便地修改web.xml就行了，避免了直接修改源代码的麻烦。</init-param></p>
+<h4 id="String-getServletName-–-获取当前Servlet在web-xml中配置的名字。"><a href="#String-getServletName-–-获取当前Servlet在web-xml中配置的名字。" class="headerlink" title="String getServletName()  – 获取当前Servlet在web.xml中配置的名字。"></a>String getServletName()  – 获取当前Servlet在web.xml中配置的名字。</h4><h4 id="String-getInitParameter-String-name-–-获取当前Servlet指定名称的初始化参数的值。"><a href="#String-getInitParameter-String-name-–-获取当前Servlet指定名称的初始化参数的值。" class="headerlink" title="String getInitParameter(String name) – 获取当前Servlet指定名称的初始化参数的值。"></a>String getInitParameter(String name) – 获取当前Servlet指定名称的初始化参数的值。</h4><h4 id="Enumeration-getInitParameterNames-–-获取当前Servlet所有初始化参数的名字组成的枚举。"><a href="#Enumeration-getInitParameterNames-–-获取当前Servlet所有初始化参数的名字组成的枚举。" class="headerlink" title="Enumeration getInitParameterNames()  – 获取当前Servlet所有初始化参数的名字组成的枚举。"></a>Enumeration getInitParameterNames()  – 获取当前Servlet所有初始化参数的名字组成的枚举。</h4><p>在web.xml里配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line">  		&lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;</span><br><span class="line">  		&lt;servlet-class&gt;com.itshixun.day2.servlet.HelloServlet&lt;/servlet-class&gt;</span><br><span class="line"> 	 &lt;!-- 配置Serlvet 的初始化参数 --&gt;</span><br><span class="line"> 	 &lt;init-param&gt;</span><br><span class="line"> 	  	 &lt;!-- 参数名 --&gt;</span><br><span class="line"> 	 	&lt;param-name&gt;user&lt;/param-name&gt;</span><br><span class="line"> 	 	&lt;!-- 参数值 --&gt;</span><br><span class="line"> 	 	&lt;param-value&gt;root&lt;/param-value&gt;</span><br><span class="line"> 	 &lt;/init-param&gt;</span><br><span class="line"> 	 &lt;init-param&gt;</span><br><span class="line"> 	 	&lt;param-name&gt;password&lt;/param-name&gt;</span><br><span class="line"> 	 	&lt;param-value&gt;1234&lt;/param-value&gt;</span><br><span class="line"> 	 &lt;/init-param&gt;</span><br><span class="line">&lt;/servlet&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这里配置了两个参数名和其对应的参数值。然后在代码中获取配置好的参数。(我是在init中获取参数)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String sname = config.getServletName();//获取当前Servlet在web.xml中配置的名称</span><br><span class="line">private String user = config.getInitParameter(&quot;user&quot;);//获取参数名为user的参数值</span><br><span class="line">private String password = config.getInitParameter(&quot;password&quot;);//获取参数名为password的参数值</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//一次获取Servlet里的所有初始参数</span><br><span class="line">Enumeration&lt;String&gt; names = config.getInitParameterNames();</span><br><span class="line">while(names.hasMoreElements())&#123;</span><br><span class="line">	String name = names.nextElement();</span><br><span class="line">    String value = config.getInitParameter(name);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二、ServletContext：代表当前Web应用（非常重要）（段落来源：http-www-cnblogs-com-smyhvae-p-4140877-html）"><a href="#二、ServletContext：代表当前Web应用（非常重要）（段落来源：http-www-cnblogs-com-smyhvae-p-4140877-html）" class="headerlink" title="二、ServletContext：代表当前Web应用（非常重要）（段落来源：http://www.cnblogs.com/smyhvae/p/4140877.html）"></a>二、ServletContext：代表当前Web应用（非常重要）（段落来源：<a href="http://www.cnblogs.com/smyhvae/p/4140877.html）" target="_blank" rel="noopener">http://www.cnblogs.com/smyhvae/p/4140877.html）</a></h2><p>WEB容器在启动时，它会为每个WEB应用程序都创建一个对应的ServletContext对象，它代表当前web应用。ServletConfig对象中维护了ServletContext对象的引用，开发人员在编写servlet时，可以通过ServletConfig.getServletContext方法获得ServletContext对象。由于一个WEB应用中的所有Servlet共享同一个ServletContext对象，因此Servlet对象之间可以通过ServletContext对象来实现通讯。ServletContext对象通常也被称之为context域对象。<br>ServletContext的应用：</p>
+<h3 id="1、做为域对象可以在整个Web应用范围内共享数据。"><a href="#1、做为域对象可以在整个Web应用范围内共享数据。" class="headerlink" title="1、做为域对象可以在整个Web应用范围内共享数据。"></a>1、做为域对象可以在整个Web应用范围内共享数据。</h3><p>域对象：在一个可以被看见的范围内共享数据用到对象<br>作用范围：整个web应用范围内共享数据<br>生命周期：当服务器启动web应用加载后创建出ServletContext对象后，域产生。当web应用被移除出容器或服务器关闭，随着web应用的销毁域销毁。</p>
+<h3 id="2、获取Web应用的初始化参数"><a href="#2、获取Web应用的初始化参数" class="headerlink" title="2、获取Web应用的初始化参数"></a>2、获取Web应用的初始化参数</h3><p>我们在第一段中，通过<init-param>标签为某一个单独的servlet加配置信息，这种配置信息在其他的Servlet中是无法访问到的。可如果我们使用<context-param>标签（与Servlet标签并列）为整个Web应用配置属性的话，那所有的Servlet就都能访问里面的参数了。例如：可以把数据库的配置信息放在这里。<br>请求参数 parameter — 浏览器发送过来的请求中的参数信息。<br>初始化参数 initparameter — 在web.xml中为Servlet或ServletContext配置的初始化时带有的基本参数。<br>域属性 attribute — 四大作用域中存取的键值对。<br>在web.xml中为整个web应用天机啊初始化参数:用户名、密码。代码要放到<serclet>上面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;context-param&gt;</span><br><span class="line">  &lt;param-name&gt;username&lt;/param-name&gt;</span><br><span class="line">  &lt;param-value&gt;gsj&lt;/param-value&gt;</span><br><span class="line">&lt;/context-param&gt;</span><br><span class="line">&lt;context-param&gt;</span><br><span class="line">  &lt;param-name&gt;userpassword&lt;/param-name&gt;</span><br><span class="line">  &lt;param-value&gt;123456&lt;/param-value&gt;</span><br><span class="line">&lt;/context-param&gt;</span><br></pre></td></tr></table></figure></serclet></context-param></init-param></p>
+<p>在代码中实现，同样在init方法里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//获得单个ServletContext里面的初始化参数</span><br><span class="line">ServletContext context = config.getServletContext();</span><br><span class="line">String value1 = context.getInitParameter(&quot;username&quot;);</span><br><span class="line">String value2 = context.getInitParameter(&quot;userpassword&quot;);</span><br><span class="line">System.out.println(value1 + &quot;;&quot; + value2);</span><br><span class="line">//一次获得全部ServletContext里的初始化参数</span><br><span class="line">Enumeration enumeration = context.getInitParameterNames();</span><br><span class="line">while (enumeration.hasMoreElements()) &#123;</span><br><span class="line">	String name = (String) enumeration.nextElement();</span><br><span class="line">	String value = context.getInitParameter(name);</span><br><span class="line">    System.out.println(name + &quot;;&quot; + value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>源码地址：链接：<a href="https://pan.baidu.com/s/1AQG_Xy74Xvwel9lZO2dFUQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1AQG_Xy74Xvwel9lZO2dFUQ</a> 密码：s95b<br>好啦，此篇写完，继续学习，再更新。<br>ps:博客几天实现了留言功能，但是需要github账号登陆才可评论。欢迎评论呀~~~</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java Web</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ServletConfig</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ServletContext</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Eclipse//" class="article-tag-list-link color3">Eclipse</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/17/Java Web学习之Servlet/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-a" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -471,15 +576,31 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Servlet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ServletConfig</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ServletContext</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>
