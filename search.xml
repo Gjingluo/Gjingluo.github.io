@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>运行时文件不在WEb-INF下，但运行地址却在WEB-INF下</title>
+      <link href="/2018/07/18/%E8%BF%90%E8%A1%8CJavaWeb%E7%A8%8B%E5%BA%8F%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+      <url>/2018/07/18/%E8%BF%90%E8%A1%8CJavaWeb%E7%A8%8B%E5%BA%8F%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<p>碰到这个问题是不是很绝望，是不是纠结了好久，百度又找不出来。<br><img src="https://s1.ax1x.com/2018/07/18/P1VGPe.png" alt="bug"><br>是不是这个界面呀<br>可以看出，运行的文件是在WEB-INF下面<br>在这里扩展下WEB-INF目录作用<br><strong>WEB-INF是Java的WEB应用的安全目录。所谓安全就是客户端无法访问，只有服务端可以访问的目录。如果想在页面中直接访问其中的文件，必须通过web.xml文件对要访问的文件进行相应映射才能访问。<br>WEB-INF文件夹下除了web.xml外，还存一个classes文件夹，用以放置 <em>.class文件，这些 </em>.class文件是网站设计人员编写的类库，实现了jsp页面前台美工与后台服务的分离，使得网站的维护非常方便。web.xml文件为网站部署描述XML文件，对网站的部署非常重要。<br>Web-Inf文件夹中除了有classes文件夹和一个web.xml文件外、还有lib文件夹（用于存放需要的jar包）（用于配置，比如说用来配置过滤器等。）</strong><br>因此，可能会是文件建立出错<br>所以，文件的存放位置要<br><img src="https://s1.ax1x.com/2018/07/18/P1Ezgs.png" alt="文件位置"><br>如果这样还是出现如图所示的【HTTP Status 404】错误，别担心，还有办法，那就是在新建的Servlet的文件里面修改下代码<br>例如我的java文件名为Test：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class Test extends HttpServlet &#123;</span><br></pre></td></tr></table></figure></p><p>就完成了<br><img src="https://s1.ax1x.com/2018/07/18/P1VuK1.png" alt="完成"><br>ps：但是遇到这种错误是老师要求将<code>extends HttpServlet</code>改为<code>implements Servlet</code>，改完后可以运行，但是过段时间就不可以了。现在还不清楚原因，当知道解决办法。麻烦知道的留言，谢谢。</p>]]></content>
+      
+      <categories>
+          
+          <category> “运行JavaWeb程序遇到的问题” </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaWeb </tag>
+            
+            <tag> WEB-INF </tag>
+            
+            <tag> Eclipse </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Java Web学习之Servlet</title>
       <link href="/2018/07/17/Java%20Web%E5%AD%A6%E4%B9%A0%E4%B9%8BServlet/"/>
       <url>/2018/07/17/Java%20Web%E5%AD%A6%E4%B9%A0%E4%B9%8BServlet/</url>
@@ -24,29 +49,6 @@
             <tag> ServletConfig </tag>
             
             <tag> ServletContext </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>安装Tomcat和建立第一个Java Web程序</title>
-      <link href="/2018/07/16/a/"/>
-      <url>/2018/07/16/a/</url>
-      <content type="html"><![CDATA[<h3 id="一、Tomcat简介"><a href="#一、Tomcat简介" class="headerlink" title="一、Tomcat简介"></a>一、Tomcat简介</h3><p> Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。由于有了Sun 的参与和支持，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，Tomcat 5支持最新的Servlet 2.4 和JSP 2.0 规范。因为Tomcat 技术先进、性能稳定，而且免费，因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web 应用服务器。</p><h3 id="二、安装Tomcat"><a href="#二、安装Tomcat" class="headerlink" title="二、安装Tomcat"></a>二、安装Tomcat</h3><p>这里安装的<a href="https://pan.baidu.com/s/1guHszTKl_fTYpWjGAhrX9w" target="_blank" rel="noopener">Tomcat</a>的版本为Tomcat 7.0，可以自行去Tomcat官网下载，也可以点击文本中的超链接进行下载（百度网盘）。将下载好的Tomcat压缩文件直接解压到制定的目录便可完成Tomcat的安装。<img src="https://s1.ax1x.com/2018/07/16/PQfIv8.md.png" alt="Tomcat目录"></p><p>对子目录进行简介：</p><p>（1）bin: 用于存放Tomcat的可执行文件和脚本文件（扩展名为bat的文件），如tomcat7.exe、startup.bat（启动Tomcat的脚本文件）。</p><p>（2）conf: 用于存放Tomcat的各种配置文件，如web.xml、server.xml。</p><p>（3）lib: 用于存放Tomcat服务器和所有Web应用程序需要访问的JAR文件。</p><p>（4）logs: 用于存放Tomcat的日志文件</p><p>（5）temp: 用于存放Tomcat运行时产生的临时文件。</p><p>（6）webapps: Web应用程序的主要发布目录，通常将要发布的应用程序放在这个目录下。</p><p>（7）work: Tomcat的工作目录，JSP编译生成的Servlet源文件和字节码文件放在这个目录下。</p><p>双击startup.bat文件（后缀为.bat），便会启动Tomcat服务器，此时，可以在命令行看到一些启动信息。<img src="https://s1.ax1x.com/2018/07/16/PQh9rF.md.png" alt="启动程序"></p><h3 id="三、Tomcat诊断"><a href="#三、Tomcat诊断" class="headerlink" title="三、Tomcat诊断"></a>三、Tomcat诊断</h3><p>安装启动Tomcat时，可能会遇到双击bin目录下startup.bat脚本文件是，命令行窗口一闪而过。可以先启动一个命令行窗口，在这个命令行窗口中执行startup.bat命令，就会卡你到错误信息显示izai该窗口。然后再根据具体问题，具体分析。</p><h3 id="四、编写第一个Java-Web程序"><a href="#四、编写第一个Java-Web程序" class="headerlink" title="四、编写第一个Java Web程序"></a>四、编写第一个Java Web程序</h3><p>打开<a href="https://pan.baidu.com/s/1X8nN7YlJZ3yzqszRCzArpA" target="_blank" rel="noopener">Eclipse</a>，单击工具栏中的【Window】-&gt;【Perferences】选项，会弹出一个【Perferences】窗体，在该窗口中单机坐车菜单中的【Server】选项，值啊展开的菜单中选择最后一项【Runtime Environments】，这是窗口右侧会出现【Server Runtime Environment】选项卡，如图（我已经安装完毕，所以有东西，初始时没有）<img src="https://s1.ax1x.com/2018/07/16/PQh7z6.md.png" alt="选项卡">，点击【Add】，选择自己的服务器和版本号，我的是apache-tomcat-7.0.67，所以选择的是【Apache Tomcat v7.0】<img src="https://s1.ax1x.com/2018/07/16/PQhXee.png" alt="">，之后点【Next】，在弹出的窗口单击【Browser】按钮，选择安装Tomcat服务器的目录，最后点击【Finish】-&gt;【OK】按钮，完成Eclipse和Tomcat服务器的关联。<img src="https://s1.ax1x.com/2018/07/16/PQ4MlV.png" alt=""></p><p>单击Eclipse下侧窗口的【Servers】选项卡标签，在该选项卡中可以看到一个“No server avaliable.Define a new server from the new server wizard…”的链接，单击链接，会弹出一个【New Server】窗口。选中最上面的文件夹中的【Tomcat v7.0 Server at localhost】选项。就此完成配置。</p><p>在Eclipse左侧右键新建【Project】，选中【Web】文件夹下【Dynamic Web Project】<img src="https://s1.ax1x.com/2018/07/16/PQ4GTJ.md.png" alt="创建项目">，起好名字后点【Next】，直到最后一页，选中唯一一个可选的项，再点【Finish】即可完成。<img src="https://s1.ax1x.com/2018/07/16/PQ4r0e.png" alt="finish">在建立的项目中右键即可创建.jsp文件，生成的.jsp文件会在【WebContent】文件下下面，一般情况下会出现错误，这个错误是构建路径问题。点击项目右键选择【java build path】点击进入，然后在右边的窗口上选择如图。<img src="https://s1.ax1x.com/2018/07/16/PQ4f6f.png" alt="导库">，点击【外部库】，选择Tomcat中lib下的servlet.api即可。如图<img src="https://s1.ax1x.com/2018/07/16/PQ45nS.md.png" alt="servler.api">，下面就实现你想要的目标吧！（jsp类似于html）</p>]]></content>
-      
-      <categories>
-          
-          <category> Eclipse </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Tomcat </tag>
-            
-            <tag> Eclipse </tag>
             
         </tags>
       
