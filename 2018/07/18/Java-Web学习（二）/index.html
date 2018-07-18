@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: ServletConfig | Whales fall&#39;s blog</title>
+  <title>Java Web学习（二） | Whales fall&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I walk with the wind, I am like a miracle">
-<meta name="keywords" content="Literature and art">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Whales fall&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/ServletConfig/index.html">
+  <meta name="description" content="一、ServletRequestdef： ServletRequest由Servlet容器来管理，当客户请求到来时，容器创建一个ServletRequest对象，封装请求数据，同时创建一个ServletResponse对象，封装响应数据。这两个对象将被容器作为service（）方法的参数传递给Servlet，Servlet利用ServletRequest对象获取客户端发来的请求数据，利用Servl">
+<meta name="keywords" content="ServletRequest,ServletResponse">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Web学习（二）">
+<meta property="og:url" content="http://yoursite.com/2018/07/18/Java-Web学习（二）/index.html">
 <meta property="og:site_name" content="Whales fall&#39;s blog">
-<meta property="og:description" content="I walk with the wind, I am like a miracle">
+<meta property="og:description" content="一、ServletRequestdef： ServletRequest由Servlet容器来管理，当客户请求到来时，容器创建一个ServletRequest对象，封装请求数据，同时创建一个ServletResponse对象，封装响应数据。这两个对象将被容器作为service（）方法的参数传递给Servlet，Servlet利用ServletRequest对象获取客户端发来的请求数据，利用Servl">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-18T12:10:13.061Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Whales fall&#39;s blog">
-<meta name="twitter:description" content="I walk with the wind, I am like a miracle">
+<meta name="twitter:title" content="Java Web学习（二）">
+<meta name="twitter:description" content="一、ServletRequestdef： ServletRequest由Servlet容器来管理，当客户请求到来时，容器创建一个ServletRequest对象，封装请求数据，同时创建一个ServletResponse对象，封装响应数据。这两个对象将被容器作为service（）方法的参数传递给Servlet，Servlet利用ServletRequest对象获取客户端发来的请求数据，利用Servl">
   
     <link rel="alternative" href="/atom.xml" title="Whales fall&#39;s blog" type="application/atom+xml">
   
@@ -159,83 +160,225 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java-Web学习（二）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/Java Web学习之Servlet/" class="archive-article-date">
-  	<time datetime="2018-07-17T09:35:12.784Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/Java Web学习之Servlet/">Java Web学习之Servlet（一）</a>
+    <h1 class="article-title" itemprop="name">
+      Java Web学习（二）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/07/18/Java-Web学习（二）/" class="archive-article-date">
+  	<time datetime="2018-07-18T09:18:22.770Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、ServletRequest"><a href="#一、ServletRequest" class="headerlink" title="一、ServletRequest"></a>一、ServletRequest</h2><h4 id="def：-ServletRequest由Servlet容器来管理，当客户请求到来时，容器创建一个ServletRequest对象，封装请求数据，同时创建一个ServletResponse对象，封装响应数据。这两个对象将被容器作为service（）方法的参数传递给Servlet，Servlet利用ServletRequest对象获取客户端发来的请求数据，利用ServletResponse对象发送响应数据。ServletRequest封装了请求信息，可以从中获取任何的请求信息。"><a href="#def：-ServletRequest由Servlet容器来管理，当客户请求到来时，容器创建一个ServletRequest对象，封装请求数据，同时创建一个ServletResponse对象，封装响应数据。这两个对象将被容器作为service（）方法的参数传递给Servlet，Servlet利用ServletRequest对象获取客户端发来的请求数据，利用ServletResponse对象发送响应数据。ServletRequest封装了请求信息，可以从中获取任何的请求信息。" class="headerlink" title="def： ServletRequest由Servlet容器来管理，当客户请求到来时，容器创建一个ServletRequest对象，封装请求数据，同时创建一个ServletResponse对象，封装响应数据。这两个对象将被容器作为service（）方法的参数传递给Servlet，Servlet利用ServletRequest对象获取客户端发来的请求数据，利用ServletResponse对象发送响应数据。ServletRequest封装了请求信息，可以从中获取任何的请求信息。"></a>def： ServletRequest由Servlet容器来管理，当客户请求到来时，容器创建一个ServletRequest对象，封装请求数据，同时创建一个ServletResponse对象，封装响应数据。这两个对象将被容器作为service（）方法的参数传递给Servlet，Servlet利用ServletRequest对象获取客户端发来的请求数据，利用ServletResponse对象发送响应数据。ServletRequest封装了请求信息，可以从中获取任何的请求信息。</h4><p>login.html页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;LoginServlet&quot; menthod=&quot;post&quot;&gt;</span><br><span class="line">	user: &lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;</span><br><span class="line">	password: &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;</span><br><span class="line">	&lt;br&gt;&lt;br&gt;</span><br><span class="line">	interesting:</span><br><span class="line">	&lt;input type=&quot;checkbox&quot; name=&quot;interesting&quot; value=&quot;reading&quot;/&gt;Reading</span><br><span class="line">	&lt;input type=&quot;checkbox&quot; name=&quot;interesting&quot; value=&quot;game&quot;/&gt;Game</span><br><span class="line">	&lt;input type=&quot;checkbox&quot; name=&quot;interesting&quot; value=&quot;party&quot;/&gt;Party</span><br><span class="line">	&lt;input type=&quot;checkbox&quot; name=&quot;interesting&quot; value=&quot;shopping&quot;/&gt;Shopping</span><br><span class="line">	&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;/&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>String getParameter(String name)</code>：根据请求参数的名字，返回参数值。若请求参数有多个值，则该方法只能获取第一值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String interesting = request.getParameter(&quot;interesting&quot;);</span><br><span class="line">String user = request.getParameter(&quot;user&quot;);</span><br><span class="line">String password = request.getParameter(&quot;password&quot;);</span><br><span class="line">System.out.println(user + &quot; ,&quot; + password);</span><br><span class="line">System.out.println(interesting);</span><br></pre></td></tr></table></figure></p>
+<p><code>String[] getParameterValues(String name)</code>:根据请求参数的名字，返回请求参数对应的字符串数组。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String [] interestings = request.getParameterValues(&quot;interesting&quot;);</span><br><span class="line">for(String interest: interestings)&#123;</span><br><span class="line">	System.out.println(&quot;---&gt;&quot; + interest);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>Enumeration getParameterNames()</code>:返回参数名对应的Enumeration对象，类似于ServletConfig(或ServletContext)的getInitParameterNames()方法 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Enumeration&lt;String&gt; names = request.getParameterNames();</span><br><span class="line">while(names.hasMoreElements())&#123;</span><br><span class="line">	String name = names.nextElement();</span><br><span class="line">	String val = request.getParameter(name);</span><br><span class="line">	System.out.println(name + &quot;:&quot; + val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Map getParameterMap():返回请求参数的键值对：key：参数名，value：参数值，String 数组类型。map.entrySet()键值对的集合，Set里面的类型是Map.Entry。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String[]&gt; map =request.getParameterMap();//将请求参数封装到Map&lt;String, String[]&gt;中。</span><br><span class="line">for(Map.Entry&lt;String, String[]&gt; entry: map.entrySet())&#123;</span><br><span class="line">	System.out.println(&quot;**&quot; + entry.getKey() + &quot;:&quot; + Arrays.asList(entry.getValue()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>HttpServletRequest:是ServletRequest的子接口，针对HTTP请求所定义，里面包含了大量获取HTTP请求头的所有信息。</strong><br>通过HttpServletRequest的getRequestURI()方法获取请求URL。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HttpServletRequest httpServletRequest = (HttpServletRequest) request;</span><br><span class="line">String requestURI = httpServletRequest.getRequestURI();</span><br><span class="line">System.out.println(requestURI);</span><br></pre></td></tr></table></figure></p>
+<p>通过HttpServletRequest的getMethod()方法获取请求方式（post/get）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String menthod = httpServletRequest.getMethod();</span><br><span class="line">System.out.println(menthod);</span><br></pre></td></tr></table></figure></p>
+<p>通过HttpServletRequest的getQueryString()方法：若是一个GET请求，获取请求的参数对应的那个字符串，即？后的那个字符串。若是POST，则为null。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String queryString = httpServletRequest.getQueryString();</span><br><span class="line">System.out.println(queryString);</span><br></pre></td></tr></table></figure></p>
+<p>通过HttpServletRequest的getServletPath()方法，获取请求的Servlet的映射路径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String serletPath = httpServletRequest.getServletPath();</span><br><span class="line">System.out.println(serletPath);</span><br></pre></td></tr></table></figure></p>
+<h2 id="二、ServletResponse"><a href="#二、ServletResponse" class="headerlink" title="二、ServletResponse"></a>二、ServletResponse</h2><h4 id="def-Response代表响应，响应消息中的状态码、响应头、实体内容都可以由它进行操作。"><a href="#def-Response代表响应，响应消息中的状态码、响应头、实体内容都可以由它进行操作。" class="headerlink" title="def:Response代表响应，响应消息中的状态码、响应头、实体内容都可以由它进行操作。"></a>def:Response代表响应，响应消息中的状态码、响应头、实体内容都可以由它进行操作。</h4><p>1）setCharacterEncoding(String charset)：设置响应正文的字符编码。响应正文的默认字符编码为ISO-8859-1 .</p>
+<p>2）setContentLength(int len)：设置响应正文的长度。</p>
+<p>3）setContentType（String type）：设置响应正文的MIME类型4。</p>
+<p>4）setBufferSize（int size）：设置用于存放响应正文数据的缓存区的大小。</p>
+<p>5）getCharacterEncoding（）：返回响应正文的字符编码。</p>
+<p>6）getContentType（）：返回响应正文的MIME类型。</p>
+<p>7）getBufferSize（）：获得用于存放正文数据的缓存区的大小。</p>
+<p>8）reset（）：清空缓存区内的正文数据，并且清空响应状态代码及响应头。</p>
+<p>9）resetBuffer（）：仅仅清空缓存区内的正文数据，不清空响应状态代码及响应头。</p>
+<p>10）flushBuffer（）：强制性地把缓存区内的响应正文数据发送到客户端。</p>
+<p>11）isCommitted（）：返回一个boolean类型的值。如果为true，表示缓存区内的数据已经提交给客户，即数据已经发送到客户端。</p>
+<p>12）getOutputStream（）：返回一个ServletOutputStream对象，Servlet用它来输出二进制的正文数据。</p>
+<p>13）getWriter（）：返回一个PrintWriter对象，Servlet用它来输出字符串形式的正文数据。</p>
+<p>补充：</p>
+<p>ServletResponse中的响应正文的默认MIME类型为text/plain，即纯文本类型。</p>
+<p>而HttpServletResponse中的响应正文的默认MIME类型为text/html，即HTML文档类型。</p>
+<p>设置响应的内容类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(&quot;application/x-abiword&quot;);//括号内容在tomcat的conf下web.xml里面搜索‘word’找到。</span><br></pre></td></tr></table></figure>
+<p>getWriter(): 返回Print Writer对象，调用该对象的print()方法，将把print()中的参数直接打印到客户的浏览器上。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PrintWriter out = response.getWriter();//取得输出流</span><br><span class="line">out.println(&quot;helloworld...&quot;);</span><br><span class="line">out.flush();//flush()意思是把缓冲区的内容强制的写出。</span><br><span class="line">out.close();//关闭读写流。</span><br></pre></td></tr></table></figure></p>
+<p>当完成以上任务后，就可以实现在线下载文档。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://s1.ax1x.com/2018/07/16/PQeV1A.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://s1.ax1x.com/2018/07/16/PQeZ6I.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java Web</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ServletRequest</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ServletConfig</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ServletContext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ServletResponse</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java-Web//" class="article-tag-list-link color4">Java Web</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/18/Java-Web学习（二）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/07/18/运行JavaWeb程序遇到的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">运行时文件不在WEb-INF下，但运行地址却在WEB-INF下</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2018/07/18/Java-Web学习（二）/",
+  owner: 'gjingluo',
+  repo: 'gjingluo.github.io',
+  oauth: {
+    client_id: 'b5998d6d745298946231',
+    client_secret: 'fc34fa5dcb0335b6f6805da69741bbb3328a96cc',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -258,9 +401,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
