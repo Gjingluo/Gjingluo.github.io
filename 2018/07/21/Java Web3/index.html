@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://map.jingluo.com">
-  <title>Archives | Whales fall&#39;s blog</title>
+  <title>Whales fall&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I walk with the wind, I am like a miracle">
+  <meta name="description" content="title: Java Web学习之JSP（三）comments: truecategories: “Java Web”tags: - JSP 一、什么是JSP1）JSP 是简 Servlet 编写的一种技术, 它将 Java 代码和 HTML 语句混合在同一个文件中编写,只对网页中的要动态产生的内容采用 Java 代码来编写，而对固定不变的静态内容采用普通静态 HTML 页面的方式编写。  2）">
 <meta name="keywords" content="Literature and art">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Whales fall&#39;s blog">
-<meta property="og:url" content="http://map.jingluo.com/archives/index.html">
+<meta property="og:url" content="http://map.jingluo.com/2018/07/21/Java Web3/index.html">
 <meta property="og:site_name" content="Whales fall&#39;s blog">
-<meta property="og:description" content="I walk with the wind, I am like a miracle">
+<meta property="og:description" content="title: Java Web学习之JSP（三）comments: truecategories: “Java Web”tags: - JSP 一、什么是JSP1）JSP 是简 Servlet 编写的一种技术, 它将 Java 代码和 HTML 语句混合在同一个文件中编写,只对网页中的要动态产生的内容采用 Java 代码来编写，而对固定不变的静态内容采用普通静态 HTML 页面的方式编写。  2）">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-21T05:27:06.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Whales fall&#39;s blog">
-<meta name="twitter:description" content="I walk with the wind, I am like a miracle">
+<meta name="twitter:description" content="title: Java Web学习之JSP（三）comments: truecategories: “Java Web”tags: - JSP 一、什么是JSP1）JSP 是简 Servlet 编写的一种技术, 它将 Java 代码和 HTML 语句混合在同一个文件中编写,只对网页中的要动态产生的内容采用 Java 代码来编写，而对固定不变的静态内容采用普通静态 HTML 页面的方式编写。  2）">
   
     <link rel="alternative" href="/atom.xml" title="Whales fall&#39;s blog" type="application/atom+xml">
   
@@ -159,252 +160,224 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java Web3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: Java Web学习之JSP（三）<br>comments: true<br>categories: “Java Web”<br>tags:</p>
+<pre><code>- JSP
+</code></pre><h2 id="一、什么是JSP"><a href="#一、什么是JSP" class="headerlink" title="一、什么是JSP"></a>一、什么是JSP</h2><p>1）JSP 是简 Servlet 编写的一种技术, 它将 Java 代码和 HTML 语句混合在同一个文件中编写,只对网页中的要动态产生的内容采用 Java 代码来编写，而对固定不变的静态内容采用普通静态 HTML 页面的方式编写。 </p>
+<p>2） Java Server Page: Java 服务器端网页. 在 HTML 页面中编写 Java 代码的页面。</p>
+<p>简单的程序：</p>
+<p>​    新建一个JSP页面，在body节点内的&lt;% %&gt;内即可编写Javadiamante。</p>
+<p>​    编写jsp文件内Java代码时，需要导包。</p>
+<p>​    下面第一行代码需要写到.jsp文件第一行，类似于Java导包。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"java.util.Date"</span>%&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;%</span><br><span class="line">		Date data = <span class="keyword">new</span> Date();</span><br><span class="line">		System.out.print(date);</span><br><span class="line">	%&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>3）JSP 可以放置在 WEB 应用程序中的除了 WEB-INF 及其子目录外的其他任何目录中，JSP 页面的访问路径与普通 HTML 页面的访问路径形式也完全一样。</p>
+<p>4）JSP的运行原理: JSP 本质上是一个 Servlet。</p>
+<p>每个JSP 页面在第一次被访问时， JSP 引擎将它翻译成一个 Servlet 源程序，接着再把这个 Servlet 源程序编译成 Servlet 的 class 类文件。</p>
+<p>然后再由WEB容器（Servlet引擎）像调用普通Servlet程序一样的方式来装载和解释执行这个由JSP页面翻译成的Servlet程序。</p>
+<h2 id="二、JSP页面的9个隐含对象"><a href="#二、JSP页面的9个隐含对象" class="headerlink" title="二、JSP页面的9个隐含对象"></a>二、JSP页面的9个隐含对象</h2><p><strong>def：没有声明就可以使用的对象， JSP页面一共有 9 个隐含对象。</strong></p>
+<p>查看JSP编译后生成的Java文件（Java文件详情请看”Javaweb问题“标签）</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">_jspService</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> java.io.IOException, ServletException </span>&#123;</span><br><span class="line"></span><br><span class="line">		PageContext pageContext = <span class="keyword">null</span>;</span><br><span class="line">		HttpSession session = <span class="keyword">null</span>;</span><br><span class="line">		ServletContext application = <span class="keyword">null</span>;</span><br><span class="line">		ServletConfig config = <span class="keyword">null</span>;</span><br><span class="line">		JspWriter out = <span class="keyword">null</span>;</span><br><span class="line">		Object page = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//...</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//使用  &lt;% %&gt; 编写的代码在此位置. 可以用到 request, response, pageContext, session</span></span><br><span class="line">		<span class="comment">//application, config, out, page 这 8 个隐含对象。</span></span><br><span class="line">         <span class="comment">//(实际上还可以使用一个叫 exception 的隐含对象)</span></span><br><span class="line">         <span class="comment">//共九个隐含对象，可不用导包直接在JSP脚本片段中直接引用。</span></span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>①request：HttpServletRequest的一个对象</strong></p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String name = request.getParameter()</span><br></pre></td></tr></table></figure>
+<p>②response：HttpServletResponse的一个对象（在JSP页面中几乎不会调用response的任何方法）</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.printl(response <span class="keyword">instanceof</span> HttpServletResponse);</span><br></pre></td></tr></table></figure>
+<p><strong>③pageContext：页面的上下文，是PageContext的一个对象，可以从该对象中获取到其他8个隐含对象，也可以从中获取到当前页面的其他信息。（学习自定义标签时使用它）</strong></p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ServletRequest rep = pageContext.getRequest();</span><br></pre></td></tr></table></figure>
+<p><strong>④session：代表浏览器和副武器的一次回话，是HttpSession的一个对象。</strong></p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.printlin(session.getId());</span><br></pre></td></tr></table></figure>
+<p><strong>⑤application：代表当前Web应用，是ServletContext对象</strong></p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(application.getInitParameter(<span class="string">"password"</span>));</span><br></pre></td></tr></table></figure>
+<p>⑥config：当前JSP对应的Servlet的ServletConfig对象（几乎不用），若需要访问当前JSP配置的初始化参数，需要通过映射的地址才可以访问。</p>
+<p>映射JSP：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line">		&lt;servlet-name&gt;hellojsp&lt;/servlet-name&gt;    //需要与下面&lt;servlet-name&gt;相同</span><br><span class="line">		&lt;jsp-file&gt;/hello.jsp&lt;/jsp-file&gt;          //跳转页面</span><br><span class="line">		&lt;init-param&gt;</span><br><span class="line">			&lt;param-name&gt;test&lt;/param-name&gt;       //初始化参数</span><br><span class="line">			&lt;param-value&gt;testValue&lt;/param-value&gt;//初始化参数值</span><br><span class="line">		&lt;/init-param&gt;</span><br><span class="line">&lt;/servlet&gt;</span><br><span class="line">&lt;servlet-mapping&gt;</span><br><span class="line">		&lt;servlet-name&gt;hellojsp&lt;/servlet-name&gt;</span><br><span class="line">		&lt;url-pattern&gt;/hellojsp&lt;/url-pattern&gt;  	//跳转页面名字</span><br><span class="line">&lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(config.getInitParameter(<span class="string">"test"</span>));</span><br></pre></td></tr></table></figure>
+<p><strong>⑦out：是JspWriter的对象，调用out.println()可以直接将字符串打印到浏览器。</strong></p>
+<p>⑧page：指向当前JSP对应的Servlet对象的引用，到位Object类型，只能调用Object类的方法（几乎不使用）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">out.println(request.getParameter(&quot;name&quot;));</span><br><span class="line">out.println(&quot;&lt;br&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<p><strong>⑨exception：在声名了page指令的isErrorPage=“true”时，才可以使用。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page isErrorPage=&quot;true&quot; %&gt;</span><br></pre></td></tr></table></figure>
+<p>对属性的作用域的范围从小到大：pageContext，request，session，application</p>
+<h2 id="三、JSP语法"><a href="#三、JSP语法" class="headerlink" title="三、JSP语法"></a>三、JSP语法</h2><p><strong>1、JSP编码的设定</strong></p>
+<p>1）JSP模板元素：JSP页面中的静态HTML内容。</p>
+<p>2)JSP表达式（expression）提供了蒋一个Java变量或表达式的计算结果输出到客户端简化方式，它将要输出的变量或表达式直接封装在&lt;%= 和 %&gt;之间。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">	String ageStr = request.getParameter(<span class="string">"age"</span>);</span><br><span class="line">	Integer age = Integer.parseInt(ageStr);</span><br><span class="line">	<span class="keyword">if</span>(age &gt;=<span class="number">18</span> )&#123;</span><br><span class="line">%&gt;</span><br><span class="line">		成人...</span><br><span class="line">&lt;%</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">%&gt;</span><br><span class="line">        未成人...</span><br><span class="line">&lt;%</span><br><span class="line">	&#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+<p>3)JSP声名：JSP声名将Java代码封装在&lt;%! 和 %&gt;之中，它里面的代码将被插入进Servlet的_jspServlet方法的外面。（在JSP注释可以组织Java代码的执行）</p>
+<p>4）JSP注释的格式：&lt;%– JSP 注释 –%&gt;<!-- HTML 注释 --></p>
+<p>区别：JSP注释可以阻止Java代码的执行。</p>
+<h2 id="四、域对象的属性操作"><a href="#四、域对象的属性操作" class="headerlink" title="四、域对象的属性操作"></a>四、域对象的属性操作</h2><p>1）方法</p>
+<p>void setAttribute(String name, Object o): 设置属性 。</p>
+<p>Object getAttribute(String name): 获取指定的属性。</p>
+<p>Enumeration getAttributeNames(): 获取所有的属性的名字组成的 Enumeration 对象。</p>
+<p>removeAttribute(String name): 移除指定的属性。</p>
+<p>2）域对象</p>
+<p>pageContext，request，sission，application对象都是上述方法，这四个对象称之为域对象。</p>
+<p>pageContext：属性的作用范围仅限于当前JSP页面</p>
+<p>request：属性的作用范围仅限于同意请求。</p>
+<p>session：属性的作用范围仅限于一次回话：浏览器打开知道关闭称之为一次回话（在此期间，会话不失效）。</p>
+<p>application：属性的作用范围限于当前Web应用，食饭未最大的属性作用范围，只要在一处设置属性，在其他各处的JSP或Servlet中都可以获得。</p>
+<p>jsp文件</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;% </span><br><span class="line">	pageContext.setAttribute(<span class="string">"pageContextAttr"</span>, <span class="string">"pageContextValue"</span>);</span><br><span class="line">	request.setAttribute(<span class="string">"requestAttr"</span>, <span class="string">"requestValue"</span>);</span><br><span class="line">	session.setAttribute(<span class="string">"sessionAttr"</span>, <span class="string">"sessionValue"</span>);</span><br><span class="line">	application.setAttribute(<span class="string">"applicationAttr"</span>, <span class="string">"applicationValue"</span>);</span><br><span class="line">%&gt;</span><br><span class="line">	&lt;br&gt;&lt;br&gt;</span><br><span class="line">	pageContextAttr: &lt;%= pageContext.getAttribute(<span class="string">"pageContextAttr"</span>) %&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;br&gt;&lt;br&gt;</span><br><span class="line">	requestAttr: &lt;%= request.getAttribute(<span class="string">"requestAttr"</span>) %&gt;</span><br><span class="line"></span><br><span class="line">	&lt;br&gt;&lt;br&gt;</span><br><span class="line">	sessionAttr: &lt;%= session.getAttribute(<span class="string">"sessionAttr"</span>) %&gt;	</span><br><span class="line">	</span><br><span class="line">	&lt;br&gt;&lt;br&gt;</span><br><span class="line">	applicationAttr: &lt;%= application.getAttribute(<span class="string">"applicationAttr"</span>) %&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&lt;br&gt;&lt;br&gt;</span><br><span class="line">	&lt;a href="attr_2.jsp"&gt;To Attr2 Page&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">	&lt;br&gt;&lt;br&gt;</span><br><span class="line">	&lt;a href="testAttr"&gt;To Attr Servlet&lt;/a&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;% </span><br><span class="line">		request.getRequestDispatcher(<span class="string">"/attr_2.jsp"</span>).forward(request, response);</span><br><span class="line">	%&gt;</span><br></pre></td></tr></table></figure>
+<p>servlet文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">PrintWriter out = response.getWriter();</span><br><span class="line">	</span><br><span class="line"><span class="comment">//1. 在 Servlet 中无法得到 pageContext 对象</span></span><br><span class="line">	</span><br><span class="line"><span class="comment">//2. request</span></span><br><span class="line">Object requestAttr = request.getAttribute(<span class="string">"requestAttr"</span>);</span><br><span class="line">out.print(<span class="string">"requestAttr: "</span> + requestAttr);</span><br><span class="line">out.print(<span class="string">"&lt;br&gt;&lt;br&gt;"</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//3. session</span></span><br><span class="line">Object sessionAttr = request.getSession().getAttribute(<span class="string">"sessionAttr"</span>);</span><br><span class="line">out.print(<span class="string">"sessionAttr: "</span> + sessionAttr);</span><br><span class="line">out.print(<span class="string">"&lt;br&gt;&lt;br&gt;"</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//4. application</span></span><br><span class="line">Object applicationAttr = getServletContext().getAttribute(<span class="string">"applicationAttr"</span>);</span><br><span class="line">out.print(<span class="string">"applicationAttr: "</span> + applicationAttr);</span><br><span class="line">out.print(<span class="string">"&lt;br&gt;&lt;br&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://s1.ax1x.com/2018/07/16/PQeV1A.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://s1.ax1x.com/2018/07/16/PQeZ6I.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/21/Java Web3/" class="archive-article-date">
-  	<time datetime="2018-07-21T01:46:19.966Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-21</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://map.jingluo.com/2018/07/21/Java Web3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/18/Java-Web学习（二）/" class="archive-article-date">
-  	<time datetime="2018-07-18T09:18:22.770Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/18/Java-Web学习（二）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java Web学习（二）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/18/Java-Web学习（二）/">Java Web学习（二）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ServletRequest</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ServletResponse</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/18/运行JavaWeb程序遇到的问题/" class="archive-article-date">
-  	<time datetime="2018-07-18T03:54:09.457Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/18/运行JavaWeb程序遇到的问题/">运行时文件不在WEb-INF下，但运行地址却在WEB-INF下</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaWeb</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">WEB-INF</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Eclipse</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/“运行JavaWeb程序遇到的问题”//" class="article-tag-list-link color4">“运行JavaWeb程序遇到的问题”</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/Java Web学习之Servlet/" class="archive-article-date">
-  	<time datetime="2018-07-17T09:35:12.784Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/Java Web学习之Servlet/">Java Web学习之Servlet（一）</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java Web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ServletConfig</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ServletContext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java-Web//" class="article-tag-list-link color4">Java Web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/15/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-15T09:01:53.015Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Hexo//" class="article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://map.jingluo.com/2018/07/21/Java Web3/",
+  owner: 'gjingluo',
+  repo: 'gjingluo.github.io',
+  oauth: {
+    client_id: 'b5998d6d745298946231',
+    client_secret: 'fc34fa5dcb0335b6f6805da69741bbb3328a96cc',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -427,8 +400,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
